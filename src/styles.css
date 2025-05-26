@@ -1,0 +1,406 @@
+:root {
+    --checkbox: green;
+    --checkbox_disabled: lightslategray;
+    --radiobtn: green;
+    --radiobtn_disabled: lightslategray;
+}
+
+/* body要素 */
+body {
+    overflow: hidden;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+a {
+    color: RGB(18, 154, 184);
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+mat-select,
+input[type="search"],
+.mat-datepicker-input {
+    border: 1px solid rgb(211, 211, 211);
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+input[type="search"]:read-only {
+    background-color: rgb(235, 255, 229);
+}
+
+.cond_required_input {
+    background-color: rgb(225, 225, 255);
+}
+
+.required_input {
+    background-color: rgb(255, 225, 225);
+}
+
+.required_mark {
+    color: rgb(255, 0, 0);
+}
+
+.cond_required_mark {
+    color: rgb(0, 0, 238);
+}
+
+.required_mark,
+.cond_required_mark,
+.cond_mark {
+    max-width: 1rem;
+    min-width: 1rem;
+    flex-grow: 1;
+}
+
+.mat-select {
+    font-family: 'Meiryo';
+}
+
+.mat-select-value {
+    height: 1rem;
+}
+
+.mat-select-value-text {
+    vertical-align: middle;
+}
+
+.select_noline mat-select {
+    border: none;
+}
+
+/* disabledに設定したセレクトボックスのフォント */
+.mat-select-disabled .mat-select-value {
+    color: Black;
+    height: 0.8rem;
+}
+
+.mat-select-disabled {
+    background-color: rgb(235, 248, 255);
+}
+
+.nomal_button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+.small_button {
+    font-size: 0.7rem;
+    line-height: 0.6rem;
+    border-radius: 0.4rem;
+    margin-left: 0.6rem;
+}
+
+.nomal_button,
+.small_button {
+    white-space: nowrap;
+    font-weight: 500;
+    padding: 0.3rem 0.3rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: Black !important;
+    background: Seashell;
+    background: -webkit-gradient(linear, left top, left bottom, from(Linen), to(GhostWhite));
+    background: -webkit-linear-gradient(top, Linen 0%, GhostWhite 100%);
+    background: linear-gradient(to bottom, Linen 0%, GhostWhite 100%);
+    border-color: DarkGray;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.nomal_button fa-icon {
+    margin-right: 0.5rem;
+}
+
+.nomal_button:hover,
+.small_button:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(Linen), to(GhostWhite));
+    background: -webkit-linear-gradient(bottom, Linen 0%, GhostWhite 100%);
+    background: linear-gradient(to top, Linen 0%, GhostWhite 100%);
+}
+
+.nomal_button:disabled,
+.small_button:disabled {
+    box-shadow: none;
+}
+
+/* タブ */
+mat-tab-group {
+    font-size: 18px;
+    font-family: 'Meiryo';
+}
+
+/* 横幅の領域を固定で設定
+設定をしないと、下記動作をした際に、真っ白で描画されていない箇所が出てしまう
+ポップアップ表示時に画面幅を狭くする⇒アウタースクロールでにスクロール*/
+.mat-mdc-tab-body-wrapper {
+    height: 100vh;
+}
+
+/* インナースクロールを非表示 */
+.mat-mdc-tab-body-content {
+    overflow: hidden !important;
+}
+
+/* 選択されていないタブ */
+.mat-mdc-tab {
+    background-color: rgb(186, 255, 164) !important;
+    color: white !important;
+    border-radius: 0.6rem 0.6rem 0rem 0rem !important;
+    min-width: 160px !important;
+    height: 28px !important;
+}
+
+/* 選択されているタブ */
+.mdc-tab--active {
+    background-color: rgb(57, 173, 85) !important;
+    color: white !important;
+    border-top: 1px solid black !important;
+    border-right: 1px solid black !important;
+    border-left: 1px solid black !important;
+    opacity: 1 !important;
+}
+
+/* disableのタブ */
+/* .mat-tab-label.mat-tab-disabled {
+    background-color: #d1d1d1;
+    color: white;
+} */
+
+/* タブから画面全てに跨る下線全て */
+.mat-mdc-tab-labels {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* 画面を狭めた際にタブを選択できるボタンを非表示にする */
+/* .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none !important;
+} */
+
+.mdc-tab__text-label {
+    color: white !important;
+}
+
+
+/* /////////////////// */
+
+.mdc-label {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* チェックボックス */
+mat-checkbox>.mat-internal-form-field>.mdc-checkbox {
+    padding: 0;
+
+    >.mdc-checkbox__background {
+        top: 0;
+        left: 0;
+    }
+
+    >.mat-mdc-checkbox-touch-target {
+        width: 100%;
+        height: 100%;
+    }
+
+    >.mdc-checkbox__ripple,
+    >.mat-mdc-checkbox-ripple {
+        width: 40px;
+        height: 40px;
+        top: -11px;
+        left: -11px;
+    }
+
+    &:has(.mdc-checkbox--selected)>.mdc-checkbox__background {
+        border-color: var(--checkbox);
+        background-color: var(--checkbox);
+        color: white;
+    }
+
+    &:hover {
+        >.mdc-checkbox__native-control {
+            &:checked+.mdc-checkbox__ripple {
+                opacity: 0.04;
+                background-color: var(--checkbox);
+            }
+
+            &:checked~.mdc-checkbox__background {
+                border-color: var(--checkbox);
+                background-color: var(--checkbox);
+                color: white;
+            }
+        }
+    }
+
+    >.mdc-checkbox__native-control {
+        width: 100%;
+        height: 100%;
+
+        &:focus {
+            &:checked+.mdc-checkbox__ripple {
+                opacity: 0.16;
+                background-color: var(--checkbox);
+            }
+
+            &:focus:checked~.mdc-checkbox__background,
+            &:focus:indeterminate~.mdc-checkbox__background {
+                border-color: var(--checkbox);
+                background-color: var(--checkbox);
+                color: white;
+            }
+        }
+
+        &:disabled {
+            &:not(:checked)~.mdc-checkbox__background {
+                border-color: var(--checkbox_disabled);
+                background-color: var(--checkbox_disabled);
+            }
+
+            &:checked~.mdc-checkbox__background {
+                border-color: var(--checkbox_disabled);
+                background-color: var(--checkbox_disabled);
+                color: lightgray;
+            }
+        }
+    }
+
+    &:active>.mdc-checkbox__native-control:checked+.mdc-checkbox__ripple {
+        opacity: 0.16;
+        background-color: var(--checkbox);
+        color: white;
+    }
+}
+
+mat-radio-button>.mat-internal-form-field {
+    >.mdc-radio {
+        padding: 0;
+
+        >.mat-radio-ripple {
+            width: 40px;
+            height: 40px;
+            top: -10px;
+            left: -10px;
+        }
+
+        >.mdc-radio__native-control {
+            top: -10px;
+            left: -10px;
+
+            /* &:disabled {
+        &:not(:checked)~.mdc-radio__background>.mdc-radio__outer-circle,
+        &:not(:checked)~.mdc-radio__background>.mdc-radio__inner-circle {
+          border-color: var(--checkbox_disabled);
+          background-color: var(--checkbox_disabled);
+          color: lightgray;
+        }
+      } */
+        }
+
+        >.mdc-radio__native-control:enabled:checked {
+
+            ~.mdc-radio__background>.mdc-radio__outer-circle,
+            ~.mdc-radio__background>.mdc-radio__inner-circle {
+                border-color: var(--radiobtn);
+            }
+
+            ~.mat-radio-ripple>.mat-ripple-element,
+            ~.mdc-radio__background::before {
+                background-color: var(--radiobtn);
+            }
+        }
+
+        &:hover>.mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__outer-circle,
+        &:hover>.mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__inner-circle {
+            border-color: var(--radiobtn);
+        }
+
+        &:active>.mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle {
+            border-color: var(--radiobtn);
+        }
+    }
+
+    >.mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle {
+        border-color: var(--radiobtn);
+        opacity: 0.38;
+    }
+
+    >.mdc-radio__native-control:disabled+.mdc-radio__background {
+        cursor: default
+    }
+}
+
+mat-radio-button:checked>.mat-internal-form-field>.mdc-radio>.mdc-radio__native-control:disabled {
+    ~.mdc-radio__background>.mdc-radio__outer-circle {
+        border-color: var(--checkbox_disabled);
+        color: lightgray;
+    }
+
+    ~.mdc-radio__background>.mdc-radio__inner-circle {
+        transform: scale(0.5);
+        border-color: var(--checkbox_disabled);
+        color: lightgray;
+    }
+}
+
+mat-radio-button:not(:checked)>.mat-internal-form-field>.mdc-radio>.mdc-radio__native-control:disabled {
+
+    ~.mdc-radio__background>.mdc-radio__outer-circle,
+    ~.mdc-radio__background>.mdc-radio__inner-circle {
+        border-color: var(--checkbox_disabled);
+        background-color: var(--checkbox_disabled);
+        color: lightgray;
+    }
+}
+
+
+/* カレンダー画面 */
+.mat-datepicker-content .mat-calendar {
+    height: unset !important;
+}
+
+/* 日付入力補助 土日色 */
+mat-month-view>.mat-calendar-table>.mat-calendar-body>tr>td {
+
+    /* 月表示が同じ行にあるときの土曜日 */
+    &.mat-calendar-body-label~td:last-child>.mat-calendar-body-cell>.mat-calendar-body-cell-content {
+        color: blue;
+    }
+
+    /* 土曜日 */
+    &.mat-calendar-body-cell-container~td:nth-child(7)>.mat-calendar-body-cell>.mat-calendar-body-cell-content {
+        color: blue;
+    }
+
+    /* 日曜日 */
+    &.mat-calendar-body-cell-container:first-child>.mat-calendar-body-cell>.mat-calendar-body-cell-content {
+        color: red;
+    }
+}
+
+.mat-mdc-select-arrow>svg {
+    left: 0;
+}
+
+.mat-mdc-tooltip-surface {
+    background-color: white !important;
+    padding: 0.2em !important;
+    margin-left: 10px !important;
+    border-radius: 0.4rem !important;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3) !important;
+    border: 1px solid rgb(211, 211, 211) !important;
+    z-index: calc(infinity) !important;
+    color: #000 !important;
+    font-size: 1rem !important;
+}

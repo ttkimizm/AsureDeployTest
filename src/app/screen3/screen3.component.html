@@ -1,0 +1,102 @@
+<div id="main_content_header">
+  <div id="header_left_cont_area">
+    <span>従業員選択</span>
+  </div>
+</div>
+<div id="main_content_area">
+  <input type="checkbox" class="elem_hidden" id="dialog_search_cond_open_flg">
+  <label id="dialog_search_cond_open_icon" for="dialog_search_cond_open_flg">
+    <div id="dialog_search_cond_head">
+      <fa-icon class="open_content" [icon]="fontAwesome.faAngleUp" style="margin-left: 0.5rem; margin-right: 0.5rem;"></fa-icon>
+      <fa-icon class="elem_hidden close_content" [icon]="fontAwesome.faAngleDown" style="margin-left: 0.5rem; margin-right: 0.5rem;"></fa-icon>
+      <span>検索条件&nbsp;</span>
+      <span class="open_content">非表示</span>
+      <span class="elem_hidden close_content">表示&emsp;</span>
+    </div>
+  </label>
+  <div id="main_input_info">
+    <div class="input_index">
+      <div>年月&nbsp;</div>
+      <div class="required_mark">*</div>
+      <div>
+        <input appDatepickerYmFormat [matDatepicker]="picker1" class="input_date"
+          maxlength="10" (click)="picker1.open()" style="width: 4rem;">
+        <mat-datepicker #picker1></mat-datepicker>
+        <span style="margin-left: 0.5rem;">時点</span>
+      </div>
+    </div>
+    <div class="input_index">
+      <div>発令終了&nbsp;</div>
+      <div class="cond_mark"></div>
+      <div><mat-checkbox>含む</mat-checkbox></div>
+    </div>
+    <br>
+    <div class="input_index">
+      <div>部&nbsp;</div>
+      <div class="cond_mark"></div>
+      <div>
+        <input type="search" style="width: 700px;">
+      </div>
+    </div>
+    <br>
+    <div class="input_index">
+      <div>室&nbsp;</div>
+      <div class="cond_mark"></div>
+      <div>
+        <input type="search" style="width: 700px;">
+      </div>
+    </div>
+    <br>
+    <div class="input_index">
+      <div>チーム&nbsp;</div>
+      <div class="cond_mark"></div>
+      <div>
+        <input type="search" style="width: 700px;">
+      </div>
+    </div>
+    <br>
+    <div class="input_index">
+      <div>氏名(かな・カナ可)&nbsp;</div>
+      <div class="cond_mark"></div>
+      <div>
+        <input type="search" style="width: 700px;">
+      </div>
+    </div>
+  </div>
+  <button class="nomal_button" style="margin-bottom: 0.5rem;">
+    <fa-icon [icon]="fontAwesome.faMagnifyingGlass"></fa-icon>
+    <span>検索</span>
+  </button>
+  <div id="seatch_rs">
+    <table id="seatch_rs_tbl">
+      <thead>
+        <tr>
+          <th>氏名</th>
+          <th>部署</th>
+          <th>本務／兼務</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let data of tableData; odd as isOdd;">
+          <tr [ngClass]="isOdd ? 'seatch_rs_odd_rec' : 'seatch_rs_even_rec'">
+            <td><a (click)="closeDialog(data.col1);">{{data.col1}}</a></td>
+            <td>{{data.col2}}</td>
+            <td>{{data.col3}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="main_content_footer">
+  <input type="checkbox" class="elem_hidden" id="dialog_footer_open_flg">
+  <label id="dialog_footer_open_icon" for="dialog_footer_open_flg">
+    <fa-icon class="open_content" [icon]="fontAwesome.faAngleUp"></fa-icon>
+    <fa-icon class="elem_hidden close_content" [icon]="fontAwesome.faAngleDown"></fa-icon>
+  </label>
+  <div id="footer_btn_area" style="flex-grow: 1; min-width: 0px;" (onResize)="resizeFooterDialog($event)">
+    <fa-icon [icon]="fontAwesome.faXmark" (click)="closeDialog('');" style="cursor: pointer;"></fa-icon>閉じる
+    <div style="flex-grow: 1;"></div>
+  </div>
+</div>

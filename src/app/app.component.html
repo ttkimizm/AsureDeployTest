@@ -1,0 +1,44 @@
+<!-- 画面構成 -->
+<div id="display_index">
+  <app-loading-spinner></app-loading-spinner>
+  <!-- ナビゲーションメニュー -->
+  <div id="navi_menu">
+    <!-- ナビゲーションメニュー アイコン画像 -->
+    <label id="navi_menu_icon">
+      <input type="checkbox" id="navi_menu_open_flg" [checked]="naviMenuOpen">
+      <fa-icon [icon]="fontAwesome.faBars"></fa-icon>
+    </label>
+    <!-- ナビゲーションメニュー メインコンテンツ -->
+    <div id="navi_menu_content">
+      <ng-container *ngFor="let contHash of naviMenuCont">
+        <label class="navi_menu_cont_parent">
+          <input type="radio" name="navi_menu_radio" class="navi_menu_child_open_flg" (click)="clearRadioBtn($event)">
+          <fa-icon [icon]="contHash.icon"></fa-icon>
+          <span>{{contHash.title}}</span>
+          <span *ngIf="contHash.child.length != 0">
+            <fa-icon [icon]="fontAwesome.faAngleRight" class="close_content"></fa-icon>
+            <fa-icon [icon]="fontAwesome.faAngleDown" class="open_content"></fa-icon>
+          </span>
+        </label>
+        <div *ngIf="contHash.child.length != 0" class="navi_menu_cont_child_area">
+          <label class="navi_menu_cont_child">
+            <fa-icon [icon]="contHash.icon"></fa-icon>
+            <span>{{contHash.title}}</span>
+          </label>
+          <label *ngFor="let childTitle of contHash.child" class="navi_menu_cont_child">
+            <fa-icon [icon]="fontAwesome.faTurnUp"></fa-icon>
+            <span>{{childTitle}}</span>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- ナビゲーションメニュー 親画面グレーアウト -->
+  <div id="display_gray_out">
+    <label for="navi_menu_open_flg"></label>
+  </div>
+  <!-- メイン機能 -->
+  <div id="display_main_act">
+    <router-outlet></router-outlet>
+  </div>
+</div>

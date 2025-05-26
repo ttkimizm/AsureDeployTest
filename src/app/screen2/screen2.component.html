@@ -1,0 +1,230 @@
+<div id="main_content_header">
+    <div id="header_left_cont_area">
+        <span>ＰＪ情報　照会</span>
+    </div>
+    <div id="header_right_cont_area">
+        <span>大成　太郎</span>
+        <button class="nomal_button">
+            <fa-icon [icon]="fontAwesome.faBookBookmark" style="margin-right: 0px;"></fa-icon>
+        </button>
+        <button class="nomal_button">
+            <fa-icon [icon]="fontAwesome.faRightFromBracket" style="margin-right: 0px;"></fa-icon>
+        </button>
+    </div>
+</div>
+<div id="main_content_area">
+    <div id="main_input_info">
+        <div class="input_index">
+            <div>センター機番&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly style="width: 60%;">
+            </div>
+        </div>
+        <div class="input_index">
+            <div>代表機番&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div><input type="search"></div>
+        </div>
+        <div class="input_index">
+            <div>機番&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div><input type="search"></div>
+        </div>
+        <br>
+        <div class="input_index">
+            <div>機器名称&nbsp;</div>
+            <div class="required_mark">*</div>
+            <div>
+                <input type="search" class="required_input" style="text-align: right;">
+            </div>
+        </div>
+        <br>
+        <div class="input_index">
+            <div>機器状況&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly>
+            </div>
+        </div>
+        <div class="input_index">
+            <div>承認状況&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly>
+            </div>
+        </div>
+        <div class="input_index">
+            <div>承認日&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly>
+            </div>
+        </div>
+        <br>
+        <div class="input_index">
+            <div>登録日&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly>
+            </div>
+        </div>
+        <div class="input_index">
+            <div>登録者&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div>
+                <input type="search" readonly>
+            </div>
+        </div>
+        <div class="input_index">
+            <div>処分日&nbsp;</div>
+            <div class="cond_required_mark">*</div>
+            <div>
+                <input type="search" class="cond_required_input" style="width: 80%;">
+                <fa-icon [icon]="fontAwesome.faCircleQuestionRegular" class="help_icon" [matTooltip]="'条件付入力必須'"
+                    matTooltipPosition="right"></fa-icon>
+            </div>
+        </div>
+        <br>
+        <div class="input_index">
+            <div>更新日&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div><input type="search" readonly></div>
+        </div>
+        <div class="input_index">
+            <div>更新者&nbsp;</div>
+            <div class="cond_mark"></div>
+            <div><input type="search" readonly></div>
+        </div>
+    </div>
+    <mat-tab-group [selectedIndex]="tabSelectedIndex">
+        <mat-tab label="機器台帳">
+            <!-- <div id="sub_input_info">
+                <input type="checkbox" class="elem_hidden" id="sub_input_info_open_flg">
+                <label id="sub_input_info_open_icon" for="sub_input_info_open_flg">
+                    <div id="sub_input_info_head" style="box-sizing: border-box;width: 100%;margin-right: 0px;">
+                        <fa-icon class="open_content" [icon]="fontAwesome.faAngleUp"></fa-icon>
+                        <fa-icon class="elem_hidden close_content" [icon]="fontAwesome.faAngleDown"></fa-icon>
+                        <span>検索条件&nbsp;</span>
+                        <span class="open_content">非表示</span>
+                        <span class="elem_hidden close_content">表示&emsp;</span>
+                    </div>
+                </label>
+                <div id="sub_input_info_content">
+                    <div class="input_index">
+                        <div>センター機番&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229); width: 60%;">
+                        </div>
+                    </div>
+                    <div class="input_index">
+                        <div>代表機番&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div><input type="search"></div>
+                    </div>
+                    <div class="input_index">
+                        <div>機番&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div><input type="search"></div>
+                    </div>
+                    <br>
+                    <div class="input_index">
+                        <div>機器名称&nbsp;</div>
+                        <div class="cond_mark" style="color: rgb(255, 0, 0);">*</div>
+                        <div>
+                            <input type="search"
+                                style="text-align: right; background-color: rgb(255, 225, 225); width: 1089px;">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input_index">
+                        <div>機器状況&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229);">
+                        </div>
+                    </div>
+                    <div class="input_index">
+                        <div>承認状況&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229);">
+                        </div>
+                    </div>
+                    <div class="input_index">
+                        <div>承認日&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229);">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input_index">
+                        <div>登録日&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229);">
+                        </div>
+                    </div>
+                    <div class="input_index">
+                        <div>登録者&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div>
+                            <input type="search" readonly style="background-color: rgb(235, 255, 229);">
+                        </div>
+                    </div>
+                    <div class="input_index">
+                        <div>処分日&nbsp;</div>
+                        <div class="cond_mark" style="color: rgb(0, 0, 238);">*</div>
+                        <div>
+                            <input type="search" style="width: 80%; background-color: rgb(225, 225, 255);">
+                            <fa-icon [icon]="fontAwesome.faCircleQuestionRegular" class="help_icon"
+                                [matTooltip]="'条件付入力必須'" matTooltipPosition="right"></fa-icon>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input_index">
+                        <div>更新日&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div><input type="search" readonly style="background-color: rgb(235, 255, 229);"></div>
+                    </div>
+                    <div class="input_index">
+                        <div>更新者&nbsp;</div>
+                        <div class="cond_mark"></div>
+                        <div><input type="search" readonly style="background-color: rgb(235, 255, 229);"></div>
+                    </div>
+                </div>
+            </div> -->
+            <p>機器台帳の内容</p>
+        </mat-tab>
+        <mat-tab label="購入申請">
+            <p>購入申請の内容</p>
+        </mat-tab>
+        <mat-tab label="購入決裁">
+            <p>購入決裁の内容</p>
+        </mat-tab>
+        <mat-tab label="処分願い">
+            <p>処分願いの内容</p>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<div id="main_content_footer">
+    <input type="checkbox" class="elem_hidden" id="footer_open_flg">
+    <label id="footer_open_icon" for="footer_open_flg">
+        <fa-icon class="open_content" [icon]="fontAwesome.faAngleUp"></fa-icon>
+        <fa-icon class="elem_hidden close_content" [icon]="fontAwesome.faAngleDown"></fa-icon>
+    </label>
+    <div id="footer_btn_area" style="flex-grow: 1; min-width: 0px;" (onResize)="commonLogic.resizeFooter($event)">
+        <fa-icon [icon]="fontAwesome.faXmark" (click)="onWinClose();" style="cursor: pointer;"></fa-icon>閉じる
+        <div style="flex-grow: 1;"></div>
+        <button class="nomal_button">
+            <fa-icon [icon]="fontAwesome.faFileCircleCheck"></fa-icon>
+            <span>承認</span>
+        </button>
+        <button class="nomal_button">
+            <fa-icon [icon]="fontAwesome.faReply"></fa-icon>
+            <span>差戻</span>
+        </button>
+    </div>
+</div>
