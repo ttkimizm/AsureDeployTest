@@ -14,7 +14,7 @@
 </div>
 <div id="main_content_area">
   <div>
-    <div style="color: red;" (click)="showLoadingSpinner()">エラーが1件発生しています。</div>
+    <div style="color: red;">エラーが1件発生しています。</div>
     <div id="search_cond">
       <input type="checkbox" class="elem_hidden" id="search_cond_open_flg">
       <label id="search_cond_open_icon" for="search_cond_open_flg">
@@ -62,7 +62,7 @@
             <div class="cond_required_mark"></div>
             <div>
               <input type="search" readonly style="width: 60%;" id="input_ref">
-              <button class="small_button" (click)="openModalDialog();">
+              <button class="small_button">
                 <fa-icon [icon]="fontAwesome.faMagnifyingGlass"></fa-icon>
                 <span>参照</span>
               </button>
@@ -183,7 +183,7 @@
             <ng-container
               *ngFor="let data of tableData | slice: showDataStartIndex: showDataStartIndex + showOnePageDataLength; odd as isOdd;">
               <tr [ngClass]="isOdd ? 'seatch_rs_odd_rec' : 'seatch_rs_even_rec'">
-                <td><a (click)="openSubWindow('./screen2');">{{data.lock_col1}}</a></td>
+                <td><a>{{data.lock_col1}}</a></td>
                 <td>{{data.lock_col2}}</td>
                 <td>{{data.lock_col3}}</td>
               </tr>
@@ -227,20 +227,6 @@
         </table>
       </div>
     </div>
-    <!-- <div id="seatch_rs_paging">
-          <fa-icon [icon]="fontAwesome.faAnglesLeft" (click)="changePage(0);"></fa-icon>
-          <fa-icon [icon]="fontAwesome.faAngleLeft" (click)="changePage(nowPageNumber - 1);"></fa-icon>
-          <ng-container *ngFor="let page of linkData;">
-              <div *ngIf="page != -1; then trueComponent; else falseComponent"></div>
-              <ng-template #trueComponent>
-                  <a *ngIf="page != nowPageNumber;" (click)="changePage(page)">{{page + 1}}</a>
-                  <span *ngIf="page == nowPageNumber;">{{page + 1}}</span>
-              </ng-template>
-              <ng-template #falseComponent>...</ng-template>
-          </ng-container>
-          <fa-icon [icon]="fontAwesome.faAngleRight" (click)="changePage(nowPageNumber + 1);"></fa-icon>
-          <fa-icon [icon]="fontAwesome.faAnglesRight" (click)="changePage(tableData.length - 1);"></fa-icon>
-      </div> -->
   </div>
 </div>
 <div id="main_content_footer">
@@ -254,10 +240,6 @@
       <fa-icon [icon]="fontAwesome.faFileCsv"></fa-icon>
       <span>一覧</span>
     </button>
-    <!-- <button class="nomal_button" (click)="printPreview()">
-            <fa-icon [icon]="fontAwesome.faFilePdf"></fa-icon>
-            <span>画面印刷</span>
-        </button> -->
     <button class="nomal_button">
       <fa-icon [icon]="fontAwesome.faFilePdf"></fa-icon>
       <span>ダウンロード</span>

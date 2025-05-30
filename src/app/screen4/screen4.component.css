@@ -2,12 +2,27 @@
     #main_content_header {
         padding-left: 2.5rem;
     }
+
+    #main_content_area>div {
+      left: 0 !important;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-    #main_content_header {
-        padding-left: 1.5rem;
-    }
+  #main_content_header {
+    padding-left: 1.5rem;
+  }
+
+  #main_content_header,
+  #main_content_footer {
+    left: 17rem;
+  }
+}
+
+#navi_menu_open_flg~#main_content_header,
+#navi_menu_open_flg~#main_content_area,
+#navi_menu_open_flg~#main_content_footer {
+  left: 0;
 }
 
 .help_icon {
@@ -48,7 +63,9 @@ a:hover .help_area {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    /* overflow: auto; */
+    left: 17rem;
+    position: absolute;
 }
 
 #main_content_area>div>* {
@@ -64,7 +81,7 @@ a:hover .help_area {
     color: white;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 5;
 }
 
 #main_content_footer {
@@ -78,6 +95,7 @@ a:hover .help_area {
     z-index: 7;
     box-sizing: border-box;
     flex-direction: column;
+    z-index: 5;
 }
 
 #footer_btn_area {
@@ -137,7 +155,7 @@ a:hover .help_area {
 #search_cond {
     border: 1px solid RGB(57, 173, 85);
     height: fit-content;
-    overflow: auto;
+    /* overflow: auto; */
     box-sizing: border-box;
     flex-shrink: 0;
 }
@@ -234,8 +252,8 @@ a:hover .help_area {
 #seatch_rs {
     display: flex;
     white-space: nowrap;
-    border: 1px solid RGB(211, 211, 211);
-    overflow: auto;
+    /* border: 1px solid RGB(211, 211, 211); */
+    /* overflow: auto; */
     width: 100%;
     max-width: fit-content;
     height: fit-content;
@@ -273,7 +291,7 @@ a:hover .help_area {
 
 #seatch_rs_lock {
     position: sticky;
-    left: 0;
+    left: 18.6rem;
     z-index: 2;
 }
 
@@ -319,6 +337,14 @@ a:hover .help_area {
 
 #seatch_rs_lock_tbl th::before {
     z-index: -1;
+}
+
+#seatch_rs_lock_tbl>tbody {
+  border-left: 1px solid RGB(211, 211, 211);
+}
+
+#seatch_rs_move_tbl>tbody {
+  border-right: 1px solid RGB(211, 211, 211);
 }
 
 #seatch_rs_move_tbl th::before {

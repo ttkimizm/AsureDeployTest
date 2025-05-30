@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Screen1Component } from './screen1/screen1.component';
 import { Screen2Component } from './screen2/screen2.component';
+import { Screen4Component } from './screen4/screen4.component';
 import { LoginGuard } from './guard/login.guard';
 
 const routes: Routes = [
   { path: '', component: Screen1Component, canActivate: [] },
-  { path: 'screen2', component: Screen2Component, canActivate: [] }
+  { path: 'screen2', component: Screen2Component, canActivate: [] },
+  { path: 'screen4', component: Screen4Component, canActivate: [] }
 ];
 
 @NgModule({

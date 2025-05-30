@@ -58,6 +58,7 @@ import {
   msalInstanceFactory,
   msalInterceptorConfigFactory
 } from './services/msal-factory.service';
+import { Screen4Component } from './screen4/screen4.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {
     Screen1Component,
     Screen2Component,
     Screen3Component,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    Screen4Component
   ],
   imports: [
     BrowserModule,

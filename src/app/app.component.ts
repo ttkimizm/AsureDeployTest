@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FontAwesomeService } from '../app/services/font-awesome.service';
 import { CommonLogicService } from './services/common-logic.service';
 
@@ -20,7 +21,8 @@ export class AppComponent implements AfterViewInit {
 
   public constructor(
     public fontAwesome: FontAwesomeService,
-    public commonLogic: CommonLogicService
+    public commonLogic: CommonLogicService,
+    private router: Router
   ) { }
 
   // onInitでは画面操作前にDOMへアクセスすることができない
@@ -94,5 +96,16 @@ export class AppComponent implements AfterViewInit {
 
     this.naviMenuOpenCont = naviMenuRadio;
     this.prevOpenNaviMenu = naviMenuRadio.checked;
+  }
+
+  public transPage(title: string): void {
+    if(this.commonLogic.isEmpty(title)) {
+      if(title == "稼働中ＰＪ一覧") {
+        this.router.navigate(['']);
+      }
+      else if(title == "未処理一覧") {
+        this.router.navigate(['screen4']);
+      }
+    }
   }
 }

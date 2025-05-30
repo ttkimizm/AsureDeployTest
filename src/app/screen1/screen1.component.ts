@@ -88,11 +88,15 @@ export class Screen1Component implements AfterViewInit {
     // 画面外にはみ出た場合は、右側に展開用ボタンを表示する
     if (this.footerHeight == 0) this.footerHeight = event.target.offsetHeight;
     let footerOpen: HTMLDivElement = <HTMLDivElement>document.getElementById("footer_open_icon");
+    let mainCont: HTMLDivElement = <HTMLDivElement>document.getElementById('main_content_area');
+    let footerArea: HTMLDivElement = <HTMLDivElement>document.getElementById('main_content_footer');
     if (this.footerHeight >= event.target.scrollHeight) {
       footerOpen.style.display = "none";
+      mainCont.style.paddingBottom = '3rem';
     }
     else if (this.footerHeight < event.target.scrollHeight) {
       footerOpen.style.display = "inline-block";
+      mainCont.style.paddingBottom = footerArea.offsetHeight + 'px';
     }
   }
 

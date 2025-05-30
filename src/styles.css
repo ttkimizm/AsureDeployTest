@@ -8,8 +8,7 @@
 /* body要素 */
 body {
     overflow: hidden;
-    margin-top: 0;
-    margin-left: 0;
+    margin: 0;
 }
 
 a {

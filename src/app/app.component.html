@@ -11,7 +11,7 @@
     <!-- ナビゲーションメニュー メインコンテンツ -->
     <div id="navi_menu_content">
       <ng-container *ngFor="let contHash of naviMenuCont">
-        <label class="navi_menu_cont_parent">
+        <label class="navi_menu_cont_parent" (click)="transPage(contHash.title);">
           <input type="radio" name="navi_menu_radio" class="navi_menu_child_open_flg" (click)="clearRadioBtn($event)">
           <fa-icon [icon]="contHash.icon"></fa-icon>
           <span>{{contHash.title}}</span>
